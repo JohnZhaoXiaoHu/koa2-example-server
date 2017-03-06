@@ -3,10 +3,10 @@ services:
 
   koa-server:
     build:
-      context: .
+      context: ./../.
       dockerfile: Dockerfile
     volumes:
-      - ./../:/home/app/
+      - ./../.:/home/app/
       - /home/app/node_modules
     command: "npm run start:dev"
     ports:
@@ -19,10 +19,10 @@ services:
 
   koa-server-integration:
     build:
-      context: .
+      context: ./../.
       dockerfile: Dockerfile.test
     volumes:
-      - ./../:/home/app/
+      - ./../.:/home/app/
       - /home/app/node_modules
     environment:
       - KOA_SERVER_URL=http://koa-server:3000

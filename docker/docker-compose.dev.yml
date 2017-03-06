@@ -3,10 +3,10 @@ services:
 
   liger-koa:
     build:
-      context: ../.
+      context: ./../.
       dockerfile: Dockerfile
     volumes:
-      - ./../:/home/app/
+      - ./../.:/home/app/
       - /home/app/node_modules
     command: "npm run start:dev"
     ports:
