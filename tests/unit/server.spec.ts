@@ -12,6 +12,6 @@ describe("AppServer", () => {
 
   it("is type of server", () => {
     expect(appServer).to.exist;
-    expect(appServer).to.have.property "start");
+    expect(appServer).to.have.property("start");
   });
 });
