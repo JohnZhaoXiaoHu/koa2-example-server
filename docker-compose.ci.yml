@@ -26,6 +26,6 @@ services:
       - /home/app/node_modules
     environment:
       - REST_SERVICE_URL=http://koa-server:8000
-    command: "npm run test"
+    command: "npm run test:unit"
     links:
       - koa-server
