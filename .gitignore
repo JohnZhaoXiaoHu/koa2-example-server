@@ -58,6 +58,7 @@ typings/
 .config
 .vscode
 ts-node/
+.bash_history
 
 dist/
 # End of https://www.gitignore.io/api/node
