@@ -4,7 +4,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 COMPOSE_FILE='./docker-compose.ci.yml'
-WAIT_FOR='rest-service-integration'
+WAIT_FOR='koa-server-integration'
 
 function cleanup () {
   docker-compose --file=${COMPOSE_FILE} -p ci kill
@@ -35,12 +35,12 @@ if [ $? -ne 0 ] ; then
   exit -1
 fi
 
-logInspect "rest-service"
-logInspect "rest-service-integration"
+logInspect "koa-server"
+logInspect "koa-server-integration"
 
 TEST_EXIT_CODE=`docker wait ${WAIT_FOR}`
-docker logs rest-service
-docker logs rest-service-integration
+docker logs koa-server
+docker logs koa-server-integration
 if [ -z ${TEST_EXIT_CODE+x} ] || [ "$TEST_EXIT_CODE" -ne 0 ]  ; then
   printf "${RED}Tests Failed${NC} - Exit Code: $TEST_EXIT_CODE\n"
 else

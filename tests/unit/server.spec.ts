@@ -1,6 +1,6 @@
 /* global describe it */
-import { Server } from "./../../src/server";
-import { expect } from "chai";
+import {Server} from "./../../src/server";
+import {expect} from "chai";
 
 describe("AppServer", () => {
   let appServer = new Server();
@@ -10,8 +10,8 @@ describe("AppServer", () => {
   });
 
 
-  it( "is of type server", () => {
-    expect( appServer ).to.exist;
-    expect( appServer ).to.have.property( "start" );
+  it("is of type server", () => {
+    expect(appServer).to.exist;
+    expect(appServer).to.have.property( "start" );
   });
 });

@@ -17,7 +17,7 @@ services:
     ports:
       - "8000:8000"
 
-  koa-servere-integration:
+  koa-server-integration:
     build:
       context: .
       dockerfile: Dockerfile.test
