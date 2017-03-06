@@ -7,4 +7,4 @@ cache:
     - node_modules
 
 script:
-  - chmod a+x ./docker-ci.sh && ./docker-ci.sh
+  - chmod a+x ./docker/docker-ci.sh && ./docker/docker-ci.sh
