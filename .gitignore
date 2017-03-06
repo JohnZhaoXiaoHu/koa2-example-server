@@ -57,6 +57,7 @@ typings/
 
 .config
 .vscode
+ts-node/
 
 dist/
 # End of https://www.gitignore.io/api/node

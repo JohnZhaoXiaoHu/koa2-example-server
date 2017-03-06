@@ -1,1 +1,0 @@
-{"version":3,"file":"/home/app/tests/test-config.ts","sources":["/home/app/tests/test-config.ts"],"names":[],"mappings":";;AAAA;;AACyB,cAAG,GAAG,OAAO,CAAC,GAAG,CAAC,cAAc,IAAI,uBAAuB,CAAC;AADrF,gCAEC","sourcesContent":["export class TestConfig {\r\n  public static readonly URL = process.env.KOA_SERVER_URL || \"http://localhost:3000\";\r\n}\r\n"]}
