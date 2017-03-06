@@ -1,0 +1,15 @@
+version: '2'
+services:
+
+  liger-koa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/app/
+      - /home/app/node_modules
+    command: "npm run start:dev"
+    ports:
+      - "3000:3000"
+      # Debugger
+      - "5858:5858"

@@ -1,0 +1,47 @@
+{
+  "name": "liger-koa",
+  "version": "0.0.1",
+  "description": "Liger Koa",
+  "main": " ./dist/index.js",
+  "scripts": {
+    "start": "npm run transpile && node ./dist/index.js",
+    "start:debug": "npm run transpile && node --inspect=5858 ./dist/index.js",
+    "start:dev": "nodemon --watch src -L --exec npm run start:debug",
+    "transpile": "node ./node_modules/typescript/bin/tsc  --listEmittedFiles",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "mocha ./test/unit/**/*.spec.ts --require ts-node/register",
+    "test:integration": "mocha ./test/integration/**/*.spec.ts --require ts-node/register --timeout=60000",
+    "lint": "echo \"Not configured, yet\" && exit 1"
+  },
+  "author": "Fern <eric@maxwellhealth.com>",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.1.2",
+    "supertest": "2.0.1",
+    "supertest-as-promised": "4.0.2",
+    "ts-node": "1.7.0",
+    "tslint": "3.15.1",
+    "tslint-microsoft-contrib": "2.0.13",
+    "typescript": "2.2.1"
+  },
+  "dependencies": {
+    "@types/chai": "3.4.34",
+    "@types/koa": "2.0.38",
+    "@types/mocha": "2.2.32",
+    "@types/node": "6.0.46",
+    "@types/supertest": "1.1.31",
+    "@types/supertest-as-promised": "2.0.32",
+    "kcors": "1.3.2",
+    "koa": "2.0.1",
+    "koa-bodyparser": "4.1.0",
+    "koa-compress": "2.0.0",
+    "koa-helmet": "3.1.0",
+    "koa-logger": "2.0.1",
+    "koa-multer": "1.0.1",
+    "koa-passport": "3.0.0",
+    "koa-response-time": "2.0.0",
+    "koa-route": "3.2.0",
+    "koa-session2": "2.2.2",
+    "passport": "0.3.2"
+  }
+}
