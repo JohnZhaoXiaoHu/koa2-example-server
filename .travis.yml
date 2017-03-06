@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - chmod a+x ./docker-ci.sh && ./docker-ci.sh

@@ -1,0 +1,31 @@
+version: '2'
+services:
+
+  koa-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/app/
+      - /home/app/node_modules
+    command: "npm run start:dev"
+    ports:
+      - "3000:3000"
+      # Debugger
+      - "5858:5858"
+    command: "npm run start"
+    ports:
+      - "8000:8000"
+
+  koa-servere-integration:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - ./:/home/app/
+      - /home/app/node_modules
+    environment:
+      - REST_SERVICE_URL=http://koa-server:8000
+    command: "npm run test"
+    links:
+      - koa-server
