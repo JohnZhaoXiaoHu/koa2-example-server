@@ -11,6 +11,7 @@ const compress = require('koa-compress');
 const errorHandler = require('./error-handler');
 
 import {UserRoutes} from './users/routes';
+import {HealthRoute} from './health';
 
 export class Server {
 
@@ -18,6 +19,7 @@ export class Server {
   public PORT: number = process.env.PORT || 3000;
 
   public userRoutes: UserRoutes;
+  public healthCheck: HealthRoute;
 
   constructor() {
     this.app = new Koa();
@@ -54,6 +56,8 @@ export class Server {
    */
   private initRoutes(): void {
     this.userRoutes = new UserRoutes(this.app);
+
+    this.healthCheck = new HealthRoute(this.app);
 
     // Error Handler at the end
     this.app.use(errorHandler);

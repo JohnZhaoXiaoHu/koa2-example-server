@@ -14,4 +14,4 @@ RUN npm install
 COPY ./src/ ./src/
 COPY ./tests/ ./tests/
 
-CMD ["npm", "run", "test:unit"]
+CMD ["npm", "run", "test"]
