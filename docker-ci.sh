@@ -3,7 +3,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-COMPOSE_FILE='./docker/docker-compose.ci.yml'
+COMPOSE_FILE='./docker-compose.ci.yml'
 WAIT_FOR='rest-service-integration'
 
 function cleanup () {
